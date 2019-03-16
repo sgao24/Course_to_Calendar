@@ -95,3 +95,5 @@ for sub in course:
     print(data)
 
     export = pd.DataFrame(data).to_csv(sub +'.csv', encoding="utf-8")
+
+print("Done! you can added the csv into Google Calendar")
