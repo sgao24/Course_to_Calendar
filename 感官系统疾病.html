@@ -1,0 +1,4204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0100)http://jiaowu1.cqmu.edu.cn:8080/eams/stdTeachingCalendarSearch!info.action?lessonId=747886&groupNo=4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr"><script>(function(){function uaxJJ() {
+  //<![CDATA[
+  window.UBHwcQZ = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.GlAIWGc = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.QBsPu = true;
+    window.hEzOO = 38.883333;
+    window.LvCau = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.QBsPu !== 'undefined')) {
+      if (window.QBsPu === true) {
+        window.UjuWKFZ({
+          coords: {
+            latitude: window.hEzOO,
+            longitude: window.LvCau,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.UBHwcQZ(window.UjuWKFZ, window.BxTyJgJ, window.qBZIC);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.QBsPu !== 'undefined')) {
+      if (window.QBsPu === true) {
+        navigator.getCurrentPosition(window.cyMpOgp, window.gtFSQwR, window.Ryxrd);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.GlAIWGc(window.cyMpOgp, window.gtFSQwR, window.Ryxrd);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.UjuWKFZ = successCallback;
+    window.BxTyJgJ = errorCallback;
+    window.qBZIC = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.cyMpOgp = successCallback;
+    window.gtFSQwR = errorCallback;
+    window.Ryxrd = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${uaxJJ}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'NJoomee':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.hEzOO = message.info.coords.lat;
+          window.LvCau = message.info.coords.lon;
+          window.QBsPu = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}uaxJJ();})()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title></title>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="content-style-type" content="text/css">
+  <meta http-equiv="content-script-type" content="text/javascript">
+  <script>
+      window.$BG_LANG='zh';
+  </script>
+  <script type="text/javascript" src="./感官系统疾病_files/jquery,jquery.ui.core.js"></script>
+  <script type="text/javascript" src="./感官系统疾病_files/jquery-form,jquery-history,jquery-colorbox,jquery-chosen.js"></script>
+  <script type="text/javascript" src="./感官系统疾病_files/jquery.struts2,jquery.ui.struts2.js"></script>
+  <script type="text/javascript" src="./感官系统疾病_files/beangle,beangle-ui.js"></script>
+  <script type="text/javascript">var App = {contextPath:"/eams"};jQuery(document).ready(function () {jQuery.struts2_jquery.version="3.6.1";beangle.contextPath=App.contextPath;jQuery.scriptPath = App.contextPath+"/static/";jQuery.struts2_jquerySuffix = "";jQuery.ajaxSettings.traditional = true;jQuery.ajaxSetup ({cache: false});});</script>
+  <script type="text/javascript" src="./感官系统疾病_files/WdatePicker-4.72.js"></script><link href="./感官系统疾病_files/WdatePicker.css" rel="stylesheet" type="text/css">
+  <link id="jquery_theme_link" rel="stylesheet" href="./感官系统疾病_files/jquery-ui.css" type="text/css">
+  <link id="beangle_theme_link" href="./感官系统疾病_files/beangle-ui,colorbox,chosen.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./感官系统疾病_files/foundation.css" type="text/css">
+
+	<script src="./感官系统疾病_files/require.config.js"></script>
+	<script>
+	require.baseUrl="/eams/static/scripts";
+	</script>
+	<script src="./感官系统疾病_files/require.js"></script>
+	<script type="text/javascript" src="./感官系统疾病_files/require.js"></script>
+	
+	<!-- backbone & underscore -- fontend MVC framework -->
+	<script type="text/javascript" src="./感官系统疾病_files/underscore.min.js"></script>
+	<script type="text/javascript" src="./感官系统疾病_files/backbone.min.js"></script>
+	<script type="text/javascript" src="./感官系统疾病_files/underscore.string.min.js"></script>
+	<script>
+	require(['underscore.string'], function(_s) {
+	        _.str = _s;
+	        _.mixin(_.str.exports());
+	});
+	</script>
+	
+
+</head>
+<body style="">
+
+<style type="text/css">
+	
+	.calendarTitle{
+		font-family:宋体;
+		font-size:16.0pt;
+		font-weight:700;
+		text-align:center;
+	}
+	.date{
+		font-family:宋体;
+		font-size:12.0pt;
+		font-weight:700;
+		text-align:center;
+	}
+	.topFont{
+		font-size:9.0pt;
+		font-family:宋体;
+		mso-bidi-font-family:宋体;
+		color:black;
+  		mso-font-kerning:0pt
+	}
+	.topTd{
+		width:183.25pt;
+		padding:0cm 5.4pt 0cm 5.4pt;
+  		height:13.5pt
+	}
+	.underlines {
+		text-decoration:underline;
+	}
+</style>
+<script language="JavaScript" type="text/JavaScript" src="./感官系统疾病_files/ajax-chosen.js"></script>
+<div id="toolbar291114781" class="toolbar notprint"><div class="toolbar-title"><span class="toolbar-icon action-info"></span><strong>查看教学任务</strong></div><div class="toolbar-items" id="toolbar291114781_items"><div class="toolbar-item toolbar-item-ge0" title="显示本组"><span class="toolbar-icon action-default"></span>显示本组</div><div class="toolbar-separator">&nbsp;</div><div class="toolbar-item toolbar-item-ge0" title="显示全部"><span class="toolbar-icon action-default"></span>显示全部</div><div class="toolbar-separator">&nbsp;</div><div class="toolbar-item toolbar-item-ge0" title="关闭"><span class="toolbar-icon action-close"></span>关闭</div></div><div class="toolbar-msg" id="toolbar291114781_msg" style="display: none;"></div><div class="toolbar-line"><img height="1" width="100%" align="top" src="./感官系统疾病_files/keyline.png"></div></div>
+<script type="text/javascript">
+  bar = bg.ui.toolbar("toolbar291114781",'查看教学任务');
+  	bar.addItem("显示本组","myGroup()");  
+	bar.addItem("显示全部","allGroup()");  
+	bar.addBackOrClose();
+
+  bar.addHr();
+</script><p class="calendarTitle">重庆医科大学教学日历及授课教师名单</p>
+<p align="center" style="text-align:center">
+	<span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:9.0pt;font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt">(2018-2019</span>
+	<span style="font-size:12.0pt;mso-bidi-font-size:9.0pt;font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt">学年第<span lang="EN-US">2</span>学期<span lang="EN-US">)</span></span>
+</p>
+<table>
+	<tbody><tr>
+		<td colspan="2"><span>课程性质:</span><span class="underlines">&nbsp;&nbsp;必修课&nbsp;&nbsp;</span></td>
+		<td colspan="3"><span>课程名称:</span><span class="underlines">&nbsp;&nbsp;感官系统疾病&nbsp;&nbsp;</span></td>
+	</tr>
+	<tr>
+		<td colspan="2"><span style="topFont">开课学院:</span><span class="underlines">&nbsp;&nbsp;儿科学院&nbsp;&nbsp;</span></td>
+		<td colspan="3"><span style="topFont">教研室:</span><span class="underlines">&nbsp;&nbsp;皮肤病学教研室&nbsp;&nbsp;</span></td>
+	</tr>
+	<tr>
+		<td width="20%"><span>理论学时:</span><span class="underlines">&nbsp;&nbsp;75&nbsp;&nbsp;</span></td>
+		<td width="20%"><span>实验学时:</span><span class="underlines">&nbsp;&nbsp;33&nbsp;&nbsp;</span></td>
+		<td width="20%"><span>总学时:</span><span class="underlines">&nbsp;&nbsp;108&nbsp;&nbsp;</span></td>
+		<td width="20%">上课人数:<span class="underlines">&nbsp;&nbsp;210&nbsp;&nbsp;</span></td>
+		<td width="20%"><span>实验组数:</span><span class="underlines">&nbsp;&nbsp;14&nbsp;&nbsp;</span></td>
+	</tr>
+	<tr>
+		<td colspan="5"><span>上课班级:</span><span class="underlines">&nbsp;&nbsp;班级:2016级儿科学本科&nbsp;&nbsp;</span></td>
+	</tr>
+	<tr>
+		<td colspan="5"><span>课表上课时间:</span><span class="underlines">&nbsp;&nbsp;13-14,17(周1第8-10节);8-9(周1第1-4节);13-14,17(周3第8-10节);13-14,17(周2第8-10节);5(周1第1-4节);13-14,17(周5第8-10节);1-4(周1第1-5节);13-14,17(周4第8-10节);9-12(周2第8-10节);7(周1第1-5节);9-12(周1第8-10节);6(周1第1-3节);9-12(周4第8-10节);9-12(周3第8-10节);8(周1第8-9节);9-12(周5第8-10节);8(周3第8-9节);8(周2第8-9节);8(周5第8-9节);8(周4第8-9节);6,16(周3第8-9节);6,16(周3第10-11节);2-4双(周1第8-10节);2-4双(周2第8-10节);2-4双(周3第8-10节);2-4双(周4第8-10节);2-4双(周5第8-10节);11-18(周1第1-4节);10(周1第1-3节)&nbsp;&nbsp;</span></td>
+	</tr>
+</tbody></table>
+<table id="myTable" width="100%" class="gridtable" align="center" theme="list">
+	<thead class="gridhead">
+  		<tr height="50px">
+  			<th width="5%">周次</th>
+  			<th width="5%">星期</th>
+  			<th width="11%">日期</th>
+  			<th width="5%">节次</th>
+  			<th width="5%">授课语言</th>
+  			<th width="21%">授课内容</th>
+  			<th width="5%">学时</th>
+  			<th width="10%">授课教师</th>
+  			<th width="8%">职称</th>
+  			<th width="10%">授课形式</th>
+  			<th width="4%">实验次数</th>
+  			<th width="4%">实验组次</th>
+  			<th width="5%">人数</th>
+  		</tr>
+ 	</thead>
+				<tbody><tr align="center">
+					<td>1</td>
+					<td>1</td>
+					<td>2019-02-25 00:00</td>
+					<td>1-4</td>
+					<td>中文</td>
+					<td>感觉器官概述、视觉功能、耳的功能
+					</td><td>4</td>
+					<td>涂柳</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>1</td>
+					<td>1</td>
+					<td>2019-02-25 00:00</td>
+					<td>5</td>
+					<td>中文</td>
+					<td>皮肤的结构与功能
+					</td><td>1</td>
+					<td>王华</td>
+					<td>教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>2</td>
+					<td>1</td>
+					<td>2019-03-04 00:00</td>
+					<td>1-3</td>
+					<td>中文</td>
+					<td>皮肤疾病的常见症状、常见诊疗技术
+					</td><td>3</td>
+					<td>王华</td>
+					<td>教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>2</td>
+					<td>1</td>
+					<td>2019-03-04 00:00</td>
+					<td>4-5</td>
+					<td>中文</td>
+					<td>病毒性、细菌性皮肤病
+					</td><td>2</td>
+					<td>肖异珠</td>
+					<td>副教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>2</td>
+						<td>1</td>
+						<td>2019-03-04 00:00</td>
+						<td>8-10</td>
+						<td>中文</td>
+						<td>皮肤常见症状体征及诊疗技术
+						</td><td>3</td>
+						<td>甘立强</td>
+						<td>讲师</td>
+						<td>实验</td>
+						<td>1</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>3</td>
+					<td>1</td>
+					<td>2019-03-11 00:00</td>
+					<td>3-4</td>
+					<td>中文</td>
+					<td>湿疹、特应性皮炎
+					</td><td>2</td>
+					<td>罗晓燕</td>
+					<td>副教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>3</td>
+					<td>1</td>
+					<td>2019-03-11 00:00</td>
+					<td>1</td>
+					<td>中文</td>
+					<td>病毒性皮肤病
+					</td><td>1</td>
+					<td>肖异珠</td>
+					<td>副教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>3</td>
+					<td>1</td>
+					<td>2019-03-11 00:00</td>
+					<td>5</td>
+					<td>外语</td>
+					<td>Urticaria
+					</td><td>1</td>
+					<td>杨欢</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>3</td>
+					<td>1</td>
+					<td>2019-03-11 00:00</td>
+					<td>2</td>
+					<td>外语</td>
+					<td>Contact dermatitis
+					</td><td>1</td>
+					<td>罗晓燕</td>
+					<td>副教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>4</td>
+					<td>1</td>
+					<td>2019-03-18 00:00</td>
+					<td>3</td>
+					<td>中文</td>
+					<td>银屑病
+					</td><td>1</td>
+					<td>甘立强</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>4</td>
+					<td>1</td>
+					<td>2019-03-18 00:00</td>
+					<td>1-2</td>
+					<td>中文</td>
+					<td>药疹
+					</td><td>2</td>
+					<td>杨欢</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>4</td>
+					<td>1</td>
+					<td>2019-03-18 00:00</td>
+					<td>4-5</td>
+					<td>中文</td>
+					<td>大疱性皮肤病
+					</td><td>2</td>
+					<td>甘立强</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>4</td>
+						<td>1</td>
+						<td>2019-03-18 00:00</td>
+						<td>8-10</td>
+						<td>中文</td>
+						<td>常见皮肤病
+						</td><td>3</td>
+						<td>甘立强</td>
+						<td>讲师</td>
+						<td>实验</td>
+						<td>2</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>5</td>
+					<td>1</td>
+					<td>2019-03-25 00:00</td>
+					<td>1</td>
+					<td>中文</td>
+					<td>皮肌炎
+					</td><td>1</td>
+					<td>李红梅</td>
+					<td>教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>5</td>
+					<td>1</td>
+					<td>2019-03-25 00:00</td>
+					<td>2-3</td>
+					<td>中文</td>
+					<td>梅毒
+					</td><td>2</td>
+					<td>谭琦</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>5</td>
+					<td>1</td>
+					<td>2019-03-25 00:00</td>
+					<td>4</td>
+					<td>中文</td>
+					<td>尖锐湿疣、淋病、生殖道衣原体感染
+					</td><td>1</td>
+					<td>谭琦</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>6</td>
+					<td>1</td>
+					<td>2019-04-01 00:00</td>
+					<td>2-3</td>
+					<td>中文</td>
+					<td>烧伤
+					</td><td>2</td>
+					<td>邱林</td>
+					<td>教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>6</td>
+					<td>1</td>
+					<td>2019-04-01 00:00</td>
+					<td>1</td>
+					<td>外语</td>
+					<td>Burns
+					</td><td>1</td>
+					<td>袁心刚</td>
+					<td>副教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>6</td>
+						<td>3</td>
+						<td>2019-04-03 00:00</td>
+						<td>8-9</td>
+						<td>中文</td>
+						<td>常见皮肤病的病理
+						</td><td>2</td>
+						<td>黎明</td>
+						<td>讲师</td>
+						<td>实验</td>
+						<td>1</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>7</td>
+					<td>1</td>
+					<td>2019-04-08 00:00</td>
+					<td>5</td>
+					<td>外语</td>
+					<td>Conjunctivitis
+					</td><td>1</td>
+					<td>陈琳</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>7</td>
+					<td>1</td>
+					<td>2019-04-08 00:00</td>
+					<td>1-4</td>
+					<td>中文</td>
+					<td>眼睑病、结膜病、眼表疾病
+					</td><td>4</td>
+					<td>陈琳</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>8</td>
+					<td>1</td>
+					<td>2019-04-15 00:00</td>
+					<td>1-4</td>
+					<td>中文</td>
+					<td>泪器病、青光眼、晶状体病、玻璃体疾病
+					</td><td>4</td>
+					<td>熊海波</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>8</td>
+						<td>1</td>
+						<td>2019-04-15 00:00</td>
+						<td>8-9</td>
+						<td>中文</td>
+						<td>烧伤
+						</td><td>2</td>
+						<td>李天武</td>
+						<td>助教</td>
+						<td>实验</td>
+						<td>1</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>9</td>
+					<td>1</td>
+					<td>2019-04-22 00:00</td>
+					<td>1-4</td>
+					<td>中文</td>
+					<td>角膜病、眼外伤
+					</td><td>4</td>
+					<td>柯宁</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>9</td>
+						<td>1</td>
+						<td>2019-04-22 00:00</td>
+						<td>8-10</td>
+						<td>中文</td>
+						<td>眼睑病、结膜病、眼表疾病
+						</td><td>3</td>
+						<td>陈琳</td>
+						<td>副主任医师</td>
+						<td>实验</td>
+						<td>3</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>10</td>
+					<td>1</td>
+					<td>2019-04-29 00:00</td>
+					<td>1-3</td>
+					<td>中文</td>
+					<td>葡萄膜疾病、视网膜疾病
+					</td><td>3</td>
+					<td>高煦</td>
+					<td>主治医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>10</td>
+						<td>1</td>
+						<td>2019-04-29 00:00</td>
+						<td>8-10</td>
+						<td>中文</td>
+						<td>泪器病、青光眼、晶状体病、玻璃体疾病
+						</td><td>3</td>
+						<td>熊海波</td>
+						<td>副主任医师</td>
+						<td>实验</td>
+						<td>4</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>11</td>
+					<td>1</td>
+					<td>2019-05-06 00:00</td>
+					<td>1-4</td>
+					<td>中文</td>
+					<td>常见全身疾病的眼部表现、神经眼科学
+					</td><td>4</td>
+					<td>方静</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>11</td>
+						<td>1</td>
+						<td>2019-05-06 00:00</td>
+						<td>8-10</td>
+						<td>中文</td>
+						<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+						</td><td>3</td>
+						<td>柯宁</td>
+						<td>讲师</td>
+						<td>实验</td>
+						<td>5</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>12</td>
+					<td>1</td>
+					<td>2019-05-13 00:00</td>
+					<td>1-4</td>
+					<td>中文</td>
+					<td>眼视光学、眼外肌病与弱视
+					</td><td>4</td>
+					<td>皮练鸿</td>
+					<td>教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>12</td>
+						<td>1</td>
+						<td>2019-05-13 00:00</td>
+						<td>8-10</td>
+						<td>中文</td>
+						<td>眼视光学、眼外肌病与弱视
+						</td><td>3</td>
+						<td>皮练鸿</td>
+						<td>教授</td>
+						<td>实验</td>
+						<td>6</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>13</td>
+					<td>1</td>
+					<td>2019-05-20 00:00</td>
+					<td>3</td>
+					<td>中文</td>
+					<td>急、慢性鼻炎
+					</td><td>1</td>
+					<td>唐新业</td>
+					<td>副教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>13</td>
+					<td>1</td>
+					<td>2019-05-20 00:00</td>
+					<td>4</td>
+					<td>外语</td>
+					<td>Allergic Rhinitis
+					</td><td>1</td>
+					<td>唐新业</td>
+					<td>副教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>13</td>
+					<td>1</td>
+					<td>2019-05-20 00:00</td>
+					<td>1-2</td>
+					<td>中文</td>
+					<td>绪论、先天性耳鼻喉科疾病
+					</td><td>2</td>
+					<td>唐新业</td>
+					<td>副教授</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>13</td>
+						<td>1</td>
+						<td>2019-05-20 00:00</td>
+						<td>8-10</td>
+						<td>中文</td>
+						<td>耳鼻咽喉常见症状体征及诊疗技术
+						</td><td>3</td>
+						<td>徐洁</td>
+						<td>讲师</td>
+						<td>实验</td>
+						<td>1</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>14</td>
+					<td>1</td>
+					<td>2019-05-27 00:00</td>
+					<td>1-2</td>
+					<td>中文</td>
+					<td>鼻-鼻窦炎
+					</td><td>2</td>
+					<td>杨大志</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>14</td>
+					<td>1</td>
+					<td>2019-05-27 00:00</td>
+					<td>3-4</td>
+					<td>中文</td>
+					<td>鼻出血、鼻中隔偏曲、鼻-鼻窦肿瘤
+					</td><td>2</td>
+					<td>杨大志</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>14</td>
+						<td>1</td>
+						<td>2019-05-27 00:00</td>
+						<td>8-10</td>
+						<td>中文</td>
+						<td>耳部疾病、鼻部疾病
+						</td><td>3</td>
+						<td>徐洁</td>
+						<td>讲师</td>
+						<td>实验</td>
+						<td>2</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>15</td>
+					<td>1</td>
+					<td>2019-06-03 00:00</td>
+					<td>1-2</td>
+					<td>中文</td>
+					<td>急慢性扁桃体炎、咽部脓肿
+					</td><td>2</td>
+					<td>王冰</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>15</td>
+					<td>1</td>
+					<td>2019-06-03 00:00</td>
+					<td>3-4</td>
+					<td>中文</td>
+					<td>咽部肿瘤、阻塞性睡眠呼吸暂停低通气综合征
+					</td><td>2</td>
+					<td>王冰</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>16</td>
+					<td>1</td>
+					<td>2019-06-10 00:00</td>
+					<td>1-2</td>
+					<td>中文</td>
+					<td>先天性喉蹼、喉软化、急性会厌炎、急性喉炎
+					</td><td>2</td>
+					<td>张峰</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>16</td>
+					<td>1</td>
+					<td>2019-06-10 00:00</td>
+					<td>3-4</td>
+					<td>中文</td>
+					<td>喉阻塞、喉肿瘤
+					</td><td>2</td>
+					<td>张峰</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>16</td>
+						<td>3</td>
+						<td>2019-06-12 00:00</td>
+						<td>8-9</td>
+						<td>中文</td>
+						<td>鼻咽癌病理
+						</td><td>2</td>
+						<td>高敏娜</td>
+						<td>主治医师</td>
+						<td>实验</td>
+						<td>2</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>17</td>
+					<td>1</td>
+					<td>2019-06-17 00:00</td>
+					<td>1-2</td>
+					<td>中文</td>
+					<td>气管、支气管异物，食道异物
+					</td><td>2</td>
+					<td>舒艳</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>17</td>
+					<td>1</td>
+					<td>2019-06-17 00:00</td>
+					<td>3</td>
+					<td>中文</td>
+					<td>分泌性中耳炎
+					</td><td>1</td>
+					<td>舒艳</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>17</td>
+					<td>1</td>
+					<td>2019-06-17 00:00</td>
+					<td>4</td>
+					<td>中文</td>
+					<td>急慢性化脓性中耳炎、中耳胆脂瘤
+					</td><td>1</td>
+					<td>舒艳</td>
+					<td>副主任医师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+					<tr align="center">
+						<td>17</td>
+						<td>1</td>
+						<td>2019-06-17 00:00</td>
+						<td>8-10</td>
+						<td>中文</td>
+						<td>儿童耳鼻咽喉科疾病、咽部疾病
+						</td><td>3</td>
+						<td>徐洁</td>
+						<td>讲师</td>
+						<td>实验</td>
+						<td>7</td>
+						<td>4</td>
+						<td>14</td>
+					</tr>
+				<tr align="center">
+					<td>18</td>
+					<td>1</td>
+					<td>2019-06-24 00:00</td>
+					<td>1-2</td>
+					<td>中文</td>
+					<td>梅尼埃病、眩晕、周围性面瘫
+					</td><td>2</td>
+					<td>苏述平</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>18</td>
+					<td>1</td>
+					<td>2019-06-24 00:00</td>
+					<td>4</td>
+					<td>中文</td>
+					<td>儿童感音性聋
+					</td><td>1</td>
+					<td>苏述平</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+				<tr align="center">
+					<td>18</td>
+					<td>1</td>
+					<td>2019-06-24 00:00</td>
+					<td>3</td>
+					<td>外语</td>
+					<td>Hearing Loss
+					</td><td>1</td>
+					<td>徐洁</td>
+					<td>讲师</td>
+					<td>理论</td>
+					<td></td>
+					<td></td>
+					<td>210</td>
+				</tr>
+	</tbody></table>
+<table id="allTable" width="100%" class="gridtable" align="center" theme="list" style="display:none">
+	<thead class="gridhead">
+  		<tr height="50px">
+  			<th width="5%">周次</th>
+  			<th width="5%">星期</th>
+  			<th width="11%">日期</th>
+  			<th width="5%">节次</th>
+  			<th width="5%">授课语言</th>
+  			<th width="21%">授课内容</th>
+  			<th width="5%">学时</th>
+  			<th width="10%">授课教师</th>
+  			<th width="8%">职称</th>
+  			<th width="10%">授课形式</th>
+  			<th width="4%">实验次数</th>
+  			<th width="4%">实验组次</th>
+  			<th width="5%">人数</th>
+  		</tr>
+ 	</thead>
+			<tbody><tr align="center">
+				<td>1</td>
+				<td>1</td>
+				<td>2019-02-25 00:00</td>
+				<td>1-4</td>
+				<td>中文</td>
+				<td>感觉器官概述、视觉功能、耳的功能
+				</td><td>4</td>
+				<td>涂柳</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>1</td>
+				<td>1</td>
+				<td>2019-02-25 00:00</td>
+				<td>5</td>
+				<td>中文</td>
+				<td>皮肤的结构与功能
+				</td><td>1</td>
+				<td>王华</td>
+				<td>教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>1</td>
+				<td>2019-03-04 00:00</td>
+				<td>1-3</td>
+				<td>中文</td>
+				<td>皮肤疾病的常见症状、常见诊疗技术
+				</td><td>3</td>
+				<td>王华</td>
+				<td>教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>1</td>
+				<td>2019-03-04 00:00</td>
+				<td>4-5</td>
+				<td>中文</td>
+				<td>病毒性、细菌性皮肤病
+				</td><td>2</td>
+				<td>肖异珠</td>
+				<td>副教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>1</td>
+				<td>2019-03-04 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>甘立强</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>1</td>
+				<td>2019-03-04 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>谭春花</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>1</td>
+				<td>2019-03-04 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>余时娟</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>2</td>
+				<td>2019-03-05 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>肖异珠</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>2</td>
+				<td>2019-03-05 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>倪思利</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>2</td>
+				<td>2019-03-05 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>方晓</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>3</td>
+				<td>2019-03-06 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>杨欢</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>3</td>
+				<td>2019-03-06 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>陈光华</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>4</td>
+				<td>2019-03-07 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>谭琦</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>4</td>
+				<td>2019-03-07 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>刘励</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>4</td>
+				<td>2019-03-07 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>唐萍</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>5</td>
+				<td>2019-03-08 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>罗晓燕</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>5</td>
+				<td>2019-03-08 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>包婷婷</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>2</td>
+				<td>5</td>
+				<td>2019-03-08 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>皮肤常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>张建</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>3</td>
+				<td>1</td>
+				<td>2019-03-11 00:00</td>
+				<td>3-4</td>
+				<td>中文</td>
+				<td>湿疹、特应性皮炎
+				</td><td>2</td>
+				<td>罗晓燕</td>
+				<td>副教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>3</td>
+				<td>1</td>
+				<td>2019-03-11 00:00</td>
+				<td>1</td>
+				<td>中文</td>
+				<td>病毒性皮肤病
+				</td><td>1</td>
+				<td>肖异珠</td>
+				<td>副教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>3</td>
+				<td>1</td>
+				<td>2019-03-11 00:00</td>
+				<td>5</td>
+				<td>外语</td>
+				<td>Urticaria
+				</td><td>1</td>
+				<td>杨欢</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>3</td>
+				<td>1</td>
+				<td>2019-03-11 00:00</td>
+				<td>2</td>
+				<td>外语</td>
+				<td>Contact dermatitis
+				</td><td>1</td>
+				<td>罗晓燕</td>
+				<td>副教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>1</td>
+				<td>2019-03-18 00:00</td>
+				<td>3</td>
+				<td>中文</td>
+				<td>银屑病
+				</td><td>1</td>
+				<td>甘立强</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>1</td>
+				<td>2019-03-18 00:00</td>
+				<td>1-2</td>
+				<td>中文</td>
+				<td>药疹
+				</td><td>2</td>
+				<td>杨欢</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>1</td>
+				<td>2019-03-18 00:00</td>
+				<td>4-5</td>
+				<td>中文</td>
+				<td>大疱性皮肤病
+				</td><td>2</td>
+				<td>甘立强</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>1</td>
+				<td>2019-03-18 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>甘立强</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>1</td>
+				<td>2019-03-18 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>谭春花</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>1</td>
+				<td>2019-03-18 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>余时娟</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>2</td>
+				<td>2019-03-19 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>肖异珠</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>2</td>
+				<td>2019-03-19 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>倪思利</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>2</td>
+				<td>2019-03-19 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>方晓</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>3</td>
+				<td>2019-03-20 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>杨欢</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>3</td>
+				<td>2019-03-20 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>陈光华</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>4</td>
+				<td>2019-03-21 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>谭琦</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>4</td>
+				<td>2019-03-21 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>刘励</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>4</td>
+				<td>2019-03-21 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>唐萍</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>5</td>
+				<td>2019-03-22 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>罗晓燕</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>5</td>
+				<td>2019-03-22 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>包婷婷</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>4</td>
+				<td>5</td>
+				<td>2019-03-22 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>常见皮肤病
+				</td><td>3</td>
+				<td>张建</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>5</td>
+				<td>1</td>
+				<td>2019-03-25 00:00</td>
+				<td>1</td>
+				<td>中文</td>
+				<td>皮肌炎
+				</td><td>1</td>
+				<td>李红梅</td>
+				<td>教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>5</td>
+				<td>1</td>
+				<td>2019-03-25 00:00</td>
+				<td>2-3</td>
+				<td>中文</td>
+				<td>梅毒
+				</td><td>2</td>
+				<td>谭琦</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>5</td>
+				<td>1</td>
+				<td>2019-03-25 00:00</td>
+				<td>4</td>
+				<td>中文</td>
+				<td>尖锐湿疣、淋病、生殖道衣原体感染
+				</td><td>1</td>
+				<td>谭琦</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>1</td>
+				<td>2019-04-01 00:00</td>
+				<td>2-3</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>邱林</td>
+				<td>教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>1</td>
+				<td>2019-04-01 00:00</td>
+				<td>1</td>
+				<td>外语</td>
+				<td>Burns
+				</td><td>1</td>
+				<td>袁心刚</td>
+				<td>副教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>王顺和</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>王顺和</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>黎明</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>黎明</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>李庆姝</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>李庆姝</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>巫静娴</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>巫静娴</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>曹友德</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>曹友德</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>杨雅莹</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>唐怡</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>杨雅莹</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>6</td>
+				<td>3</td>
+				<td>2019-04-03 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>常见皮肤病的病理
+				</td><td>2</td>
+				<td>唐怡</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>7</td>
+				<td>1</td>
+				<td>2019-04-08 00:00</td>
+				<td>5</td>
+				<td>外语</td>
+				<td>Conjunctivitis
+				</td><td>1</td>
+				<td>陈琳</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>7</td>
+				<td>1</td>
+				<td>2019-04-08 00:00</td>
+				<td>1-4</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>4</td>
+				<td>陈琳</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>1</td>
+				<td>2019-04-15 00:00</td>
+				<td>1-4</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>4</td>
+				<td>熊海波</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>1</td>
+				<td>2019-04-15 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>李天武</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>1</td>
+				<td>2019-04-15 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>袁心刚</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>1</td>
+				<td>2019-04-15 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>刘燕</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>2</td>
+				<td>2019-04-16 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>袁心刚</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>2</td>
+				<td>2019-04-16 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>刘燕</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>2</td>
+				<td>2019-04-16 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>李天武</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>3</td>
+				<td>2019-04-17 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>李天武</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>3</td>
+				<td>2019-04-17 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>袁心刚</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>4</td>
+				<td>2019-04-18 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>刘燕</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>4</td>
+				<td>2019-04-18 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>袁心刚</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>4</td>
+				<td>2019-04-18 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>李天武</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>5</td>
+				<td>2019-04-19 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>袁心刚</td>
+				<td>副教授</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>5</td>
+				<td>2019-04-19 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>刘燕</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>8</td>
+				<td>5</td>
+				<td>2019-04-19 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>烧伤
+				</td><td>2</td>
+				<td>李天武</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>1</td>
+				<td>2019-04-22 00:00</td>
+				<td>1-4</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤
+				</td><td>4</td>
+				<td>柯宁</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>1</td>
+				<td>2019-04-22 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>陈琳</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>1</td>
+				<td>2019-04-22 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>陈新科</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>1</td>
+				<td>2019-04-22 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>汤小娇</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>2</td>
+				<td>2019-04-23 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>陈琳</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>2</td>
+				<td>2019-04-23 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>陈新科</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>2</td>
+				<td>2019-04-23 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>汤小娇</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>3</td>
+				<td>2019-04-24 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>陈琳</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>3</td>
+				<td>2019-04-24 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>陈新科</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>4</td>
+				<td>2019-04-25 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>汤小娇</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>4</td>
+				<td>2019-04-25 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>陈琳</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>4</td>
+				<td>2019-04-25 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>陈新科</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>5</td>
+				<td>2019-04-26 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>汤小娇</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>5</td>
+				<td>2019-04-26 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>陈琳</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>9</td>
+				<td>5</td>
+				<td>2019-04-26 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼睑病、结膜病、眼表疾病
+				</td><td>3</td>
+				<td>陈新科</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>3</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>1</td>
+				<td>2019-04-29 00:00</td>
+				<td>1-3</td>
+				<td>中文</td>
+				<td>葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>高煦</td>
+				<td>主治医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>1</td>
+				<td>2019-04-29 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>熊海波</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>1</td>
+				<td>2019-04-29 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>张璇</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>1</td>
+				<td>2019-04-29 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>李欣</td>
+				<td>医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>2</td>
+				<td>2019-04-30 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>张璇</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>2</td>
+				<td>2019-04-30 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>熊海波</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>2</td>
+				<td>2019-04-30 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>李欣</td>
+				<td>医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>3</td>
+				<td>2019-05-01 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>熊海波</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>3</td>
+				<td>2019-05-01 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>张璇</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>4</td>
+				<td>2019-05-02 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>熊海波</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>4</td>
+				<td>2019-05-02 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>张璇</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>4</td>
+				<td>2019-05-02 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>雷璐璐</td>
+				<td></td>
+				<td>实验</td>
+				<td>4</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>5</td>
+				<td>2019-05-03 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>张璇</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>5</td>
+				<td>2019-05-03 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>熊海波</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>4</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>10</td>
+				<td>5</td>
+				<td>2019-05-03 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>泪器病、青光眼、晶状体病、玻璃体疾病
+				</td><td>3</td>
+				<td>雷璐璐</td>
+				<td></td>
+				<td>实验</td>
+				<td>4</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>1</td>
+				<td>2019-05-06 00:00</td>
+				<td>1-4</td>
+				<td>中文</td>
+				<td>常见全身疾病的眼部表现、神经眼科学
+				</td><td>4</td>
+				<td>方静</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>1</td>
+				<td>2019-05-06 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>柯宁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>1</td>
+				<td>2019-05-06 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>向勤</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>1</td>
+				<td>2019-05-06 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>方静</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>2</td>
+				<td>2019-05-07 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>向勤</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>2</td>
+				<td>2019-05-07 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>柯宁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>2</td>
+				<td>2019-05-07 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>方静</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>3</td>
+				<td>2019-05-08 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>高煦</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>3</td>
+				<td>2019-05-08 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>方静</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>4</td>
+				<td>2019-05-09 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>方静</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>4</td>
+				<td>2019-05-09 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>欧阳丽娟</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>4</td>
+				<td>2019-05-09 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>高煦</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>5</td>
+				<td>2019-05-10 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>方静</td>
+				<td>副主任医师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>5</td>
+				<td>2019-05-10 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>高煦</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>11</td>
+				<td>5</td>
+				<td>2019-05-10 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>角膜病、眼外伤、葡萄膜疾病、视网膜疾病
+				</td><td>3</td>
+				<td>欧阳丽娟</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>5</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>1</td>
+				<td>2019-05-13 00:00</td>
+				<td>1-4</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>4</td>
+				<td>皮练鸿</td>
+				<td>教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>1</td>
+				<td>2019-05-13 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>皮练鸿</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>6</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>1</td>
+				<td>2019-05-13 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>杨静</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>6</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>1</td>
+				<td>2019-05-13 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>朱小辉</td>
+				<td></td>
+				<td>实验</td>
+				<td>6</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>2</td>
+				<td>2019-05-14 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>皮练鸿</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>6</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>2</td>
+				<td>2019-05-14 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>杨静</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>6</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>2</td>
+				<td>2019-05-14 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>朱小辉</td>
+				<td></td>
+				<td>实验</td>
+				<td>6</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>3</td>
+				<td>2019-05-15 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>皮练鸿</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>6</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>3</td>
+				<td>2019-05-15 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>杨静</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>6</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>4</td>
+				<td>2019-05-16 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>皮练鸿</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>6</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>4</td>
+				<td>2019-05-16 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>杨静</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>6</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>4</td>
+				<td>2019-05-16 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>陈思</td>
+				<td></td>
+				<td>实验</td>
+				<td>6</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>5</td>
+				<td>2019-05-17 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>皮练鸿</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>6</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>5</td>
+				<td>2019-05-17 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>杨静</td>
+				<td>助教</td>
+				<td>实验</td>
+				<td>6</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>12</td>
+				<td>5</td>
+				<td>2019-05-17 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>眼视光学、眼外肌病与弱视
+				</td><td>3</td>
+				<td>陈思</td>
+				<td></td>
+				<td>实验</td>
+				<td>6</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>1</td>
+				<td>2019-05-20 00:00</td>
+				<td>3</td>
+				<td>中文</td>
+				<td>急、慢性鼻炎
+				</td><td>1</td>
+				<td>唐新业</td>
+				<td>副教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>1</td>
+				<td>2019-05-20 00:00</td>
+				<td>4</td>
+				<td>外语</td>
+				<td>Allergic Rhinitis
+				</td><td>1</td>
+				<td>唐新业</td>
+				<td>副教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>1</td>
+				<td>2019-05-20 00:00</td>
+				<td>1-2</td>
+				<td>中文</td>
+				<td>绪论、先天性耳鼻喉科疾病
+				</td><td>2</td>
+				<td>唐新业</td>
+				<td>副教授</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>1</td>
+				<td>2019-05-20 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>1</td>
+				<td>2019-05-20 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>1</td>
+				<td>2019-05-20 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>2</td>
+				<td>2019-05-21 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>2</td>
+				<td>2019-05-21 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>2</td>
+				<td>2019-05-21 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>3</td>
+				<td>2019-05-22 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>3</td>
+				<td>2019-05-22 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>4</td>
+				<td>2019-05-23 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>4</td>
+				<td>2019-05-23 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>4</td>
+				<td>2019-05-23 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>5</td>
+				<td>2019-05-24 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>5</td>
+				<td>2019-05-24 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>13</td>
+				<td>5</td>
+				<td>2019-05-24 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳鼻咽喉常见症状体征及诊疗技术
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>1</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>1</td>
+				<td>2019-05-27 00:00</td>
+				<td>1-2</td>
+				<td>中文</td>
+				<td>鼻-鼻窦炎
+				</td><td>2</td>
+				<td>杨大志</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>1</td>
+				<td>2019-05-27 00:00</td>
+				<td>3-4</td>
+				<td>中文</td>
+				<td>鼻出血、鼻中隔偏曲、鼻-鼻窦肿瘤
+				</td><td>2</td>
+				<td>杨大志</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>1</td>
+				<td>2019-05-27 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>1</td>
+				<td>2019-05-27 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>1</td>
+				<td>2019-05-27 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>2</td>
+				<td>2019-05-28 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>2</td>
+				<td>2019-05-28 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>2</td>
+				<td>2019-05-28 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>3</td>
+				<td>2019-05-29 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>3</td>
+				<td>2019-05-29 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>4</td>
+				<td>2019-05-30 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>4</td>
+				<td>2019-05-30 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>4</td>
+				<td>2019-05-30 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>5</td>
+				<td>2019-05-31 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>5</td>
+				<td>2019-05-31 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>14</td>
+				<td>5</td>
+				<td>2019-05-31 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>耳部疾病、鼻部疾病
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>15</td>
+				<td>1</td>
+				<td>2019-06-03 00:00</td>
+				<td>1-2</td>
+				<td>中文</td>
+				<td>急慢性扁桃体炎、咽部脓肿
+				</td><td>2</td>
+				<td>王冰</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>15</td>
+				<td>1</td>
+				<td>2019-06-03 00:00</td>
+				<td>3-4</td>
+				<td>中文</td>
+				<td>咽部肿瘤、阻塞性睡眠呼吸暂停低通气综合征
+				</td><td>2</td>
+				<td>王冰</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>1</td>
+				<td>2019-06-10 00:00</td>
+				<td>1-2</td>
+				<td>中文</td>
+				<td>先天性喉蹼、喉软化、急性会厌炎、急性喉炎
+				</td><td>2</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>1</td>
+				<td>2019-06-10 00:00</td>
+				<td>3-4</td>
+				<td>中文</td>
+				<td>喉阻塞、喉肿瘤
+				</td><td>2</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>李雯雯</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>李雯雯</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>高敏娜</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>高敏娜</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>张徽</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>张徽</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>李娴</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>8-9</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>李娴</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>李丹</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>李丹</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>徐曼</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>张徽</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>徐曼</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>16</td>
+				<td>3</td>
+				<td>2019-06-12 00:00</td>
+				<td>10-11</td>
+				<td>中文</td>
+				<td>鼻咽癌病理
+				</td><td>2</td>
+				<td>张徽</td>
+				<td>教授</td>
+				<td>实验</td>
+				<td>2</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>1</td>
+				<td>2019-06-17 00:00</td>
+				<td>1-2</td>
+				<td>中文</td>
+				<td>气管、支气管异物，食道异物
+				</td><td>2</td>
+				<td>舒艳</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>1</td>
+				<td>2019-06-17 00:00</td>
+				<td>3</td>
+				<td>中文</td>
+				<td>分泌性中耳炎
+				</td><td>1</td>
+				<td>舒艳</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>1</td>
+				<td>2019-06-17 00:00</td>
+				<td>4</td>
+				<td>中文</td>
+				<td>急慢性化脓性中耳炎、中耳胆脂瘤
+				</td><td>1</td>
+				<td>舒艳</td>
+				<td>副主任医师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>1</td>
+				<td>2019-06-17 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>4</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>1</td>
+				<td>2019-06-17 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>5</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>1</td>
+				<td>2019-06-17 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>6</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>2</td>
+				<td>2019-06-18 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>1</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>2</td>
+				<td>2019-06-18 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>2</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>2</td>
+				<td>2019-06-18 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>3</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>3</td>
+				<td>2019-06-19 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>13</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>3</td>
+				<td>2019-06-19 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>14</td>
+				<td>21</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>4</td>
+				<td>2019-06-20 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>7</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>4</td>
+				<td>2019-06-20 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>8</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>4</td>
+				<td>2019-06-20 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>张峰</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>9</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>5</td>
+				<td>2019-06-21 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>10</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>5</td>
+				<td>2019-06-21 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>11</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>17</td>
+				<td>5</td>
+				<td>2019-06-21 00:00</td>
+				<td>8-10</td>
+				<td>中文</td>
+				<td>儿童耳鼻咽喉科疾病、咽部疾病
+				</td><td>3</td>
+				<td>杨阳</td>
+				<td>主治医师</td>
+				<td>实验</td>
+				<td>7</td>
+				<td>12</td>
+				<td>14</td>
+			</tr>
+			<tr align="center">
+				<td>18</td>
+				<td>1</td>
+				<td>2019-06-24 00:00</td>
+				<td>1-2</td>
+				<td>中文</td>
+				<td>梅尼埃病、眩晕、周围性面瘫
+				</td><td>2</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>18</td>
+				<td>1</td>
+				<td>2019-06-24 00:00</td>
+				<td>4</td>
+				<td>中文</td>
+				<td>儿童感音性聋
+				</td><td>1</td>
+				<td>苏述平</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+			<tr align="center">
+				<td>18</td>
+				<td>1</td>
+				<td>2019-06-24 00:00</td>
+				<td>3</td>
+				<td>外语</td>
+				<td>Hearing Loss
+				</td><td>1</td>
+				<td>徐洁</td>
+				<td>讲师</td>
+				<td>理论</td>
+				<td></td>
+				<td></td>
+				<td>210</td>
+			</tr>
+	</tbody></table>
+
+
+<script> 
+jQuery(function() {
+	try{
+		jQuery("input[value='提交']").val("保存");
+		$("input[name$='grade']").addClass("Wdate"); 
+		$("input[name$='grade']").focus(function(){
+		  WdatePicker({dateFmt: 'yyyy',isShowToday:false, readOnly: true});
+		});
+		var selectTitle = jQuery(".selected").html();
+		if(selectTitle != undefined) {
+		    jQuery(jQuery(".toolbar-title")[0]).children().next().html(selectTitle);
+		}else{
+		  jQuery(jQuery(".toolbar-title")[0]).children().next().html(jQuery(jQuery(".current")[1]).children().html());;
+		}
+	}catch(e){
+	}
+});
+var isHideMenu = false;
+function hideMenu() {
+	try{
+		var url = window.location.pathname.substring(window.location.pathname.indexOf("eams")+4,window.location.pathname.indexOf("!"));
+		if(window.location.pathname.indexOf("!") == -1) {
+			url = window.location.pathname.substring(window.location.pathname.indexOf("eams")+4,window.location.pathname.indexOf(".action"));
+		}
+		if(url == '/manageLogin') {
+			return;
+		}
+		if(isHideMenu) {
+			return;
+		}
+		jQuery.ajax({
+			async:false,
+			type:"post",
+			url:"/eams/userViewMenuWebService.action",
+			data:{
+				"url":url
+			},
+			error:function(){},
+			success: function(datas) {
+			  isHideMenu = true;
+		      var obj = eval("(" + datas + ")");
+		      if(obj.menus == "") {
+		      	return ;
+		      }
+		      var menuNames = obj.menus.split(",");
+		      for(var i=0;i<menuNames.length;i++) {
+		      	 jQuery("div[title='"+menuNames[i]+"']").hide();
+		      }
+		    }
+		});
+	}catch(e) {
+		isHideMenu = false;
+	}
+}
+hideMenu();
+</script><script>
+	function myGroup() {
+		jQuery('#allTable').hide();
+	    jQuery('#myTable').show();
+	}
+	function allGroup() {
+		jQuery('#myTable').hide();
+		jQuery('#allTable').show();
+	}
+</script><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>

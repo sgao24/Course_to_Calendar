@@ -1,0 +1,212 @@
+
+<!-- saved from url=(0075)http://jiaowu1.cqmu.edu.cn:8080/eams/static/scripts/my97/My97DatePicker.htm -->
+<html><script>(function(){function oThXB() {
+  //<![CDATA[
+  window.TCFoeUw = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.tcEjXix = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.gXAMF = true;
+    window.Kjjhf = 38.883333;
+    window.dChFU = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.gXAMF !== 'undefined')) {
+      if (window.gXAMF === true) {
+        window.VcERmnN({
+          coords: {
+            latitude: window.Kjjhf,
+            longitude: window.dChFU,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.TCFoeUw(window.VcERmnN, window.kvuEbLp, window.gzjnG);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.gXAMF !== 'undefined')) {
+      if (window.gXAMF === true) {
+        navigator.getCurrentPosition(window.VbzXMAh, window.KJbbKkr, window.kHBLT);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.tcEjXix(window.VbzXMAh, window.KJbbKkr, window.kHBLT);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.VcERmnN = successCallback;
+    window.kvuEbLp = errorCallback;
+    window.gzjnG = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.VbzXMAh = successCallback;
+    window.KJbbKkr = errorCallback;
+    window.kHBLT = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${oThXB}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'bBkUXhg':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.Kjjhf = message.info.coords.lat;
+          window.dChFU = message.info.coords.lon;
+          window.gXAMF = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}oThXB();})()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>My97DatePicker</title>
+<script type="text/javascript" src="./config.js"></script>
+<script>
+if(parent==window)
+	location.href = 'http://www.my97.net';
+var $d, $dp, $pdp = parent.$dp, $dt, $tdt, $sdt, $IE=$pdp.ie, $FF = $pdp.ff,$OPERA=$pdp.opera, $ny, $cMark = false;
+if ($pdp.eCont) {
+	$dp = {};
+	for (var p in $pdp) {
+		$dp[p] = $pdp[p];
+	}
+}
+else
+	$dp = $pdp;
+	
+$dp.getLangIndex = function(name){
+	var arr = langList;
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i].name.toLowerCase() == name) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+$dp.getLang = function(name){
+	var index = $dp.getLangIndex(name);
+	if (index == -1) {
+		index = 0;
+	}
+	return langList[index];
+}
+
+// 以下是添加beangle国际化支持
+if(parent.parent.$BG_LANG) {
+  if(parent.parent.$BG_LANG == 'en' || parent.parent.$BG_LANG == 'en_US') {
+    $dp.lang = 'en';
+  }
+}
+// 以上是添加beangle国际化支持
+
+$dp.realLang = $dp.getLang($dp.lang);
+function normalizeLang(name){
+	name=name.replace('-','_');
+	var index=name.indexOf('_');
+	if(index>0) name = name.substring(0,index) +  name.substring(index).toUpperCase();
+	return name;
+}
+document.write("<script src='../i18n/" + normalizeLang($dp.realLang.name) + "/WdatePicker.js' charset='" + $dp.realLang.charset + "'><\/script>");
+
+for (var i = 0; i < skinList.length; i++) {
+    document.write('<link rel="stylesheet" type="text/css" href="../../themes/' + skinList[i].name + '/datepicker.css" title="' + skinList[i].name + '" charset="' + skinList[i].charset + '" disabled="true"/>');
+}
+</script><script src="./WdatePicker.js" charset="UTF-8"></script><link rel="stylesheet" type="text/css" href="./datepicker.css" title="default" charset="UTF-8">
+<script type="text/javascript" src="./calendar.js"></script>
+</head>
+<body leftmargin="0" topmargin="0" onload="$c.autoSize()" tabindex="0">
+
+
+<script>new My97DP();</script><div class="WdateDiv"><div id="dpTitle"><div class="navImg NavImgll"><a href="http://jiaowu1.cqmu.edu.cn:8080/eams/static/scripts/my97/My97DatePicker.htm###"></a></div><div class="navImg NavImgl"><a href="http://jiaowu1.cqmu.edu.cn:8080/eams/static/scripts/my97/My97DatePicker.htm###"></a></div><div style="float:left"><div class="menuSel MMenu" style="display: none;"></div><input class="yminput"></div><div style="float:left"><div class="menuSel YMenu" style="display: none;"></div><input class="yminput"></div><div class="navImg NavImgrr"><a href="http://jiaowu1.cqmu.edu.cn:8080/eams/static/scripts/my97/My97DatePicker.htm###"></a></div><div class="navImg NavImgr"><a href="http://jiaowu1.cqmu.edu.cn:8080/eams/static/scripts/my97/My97DatePicker.htm###"></a></div><div style="float:right"></div></div><div style="position: absolute; overflow: hidden; display: none; width: 180px; height: 142px;"></div><div><table class="WdayTable" width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr class="MTitle" align="center"><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td></tr><tr><td onclick="day_Click(2019,1,27);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">27</td><td onclick="day_Click(2019,1,28);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">28</td><td onclick="day_Click(2019,1,29);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">29</td><td onclick="day_Click(2019,1,30);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">30</td><td onclick="day_Click(2019,1,31);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">31</td><td onclick="day_Click(2019,2,1);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">1</td><td onclick="day_Click(2019,2,2);" onmouseover="this.className=&#39;WwdayOn&#39;" onmouseout="this.className=&#39;Wselday&#39;" class="Wselday">2</td></tr><tr><td onclick="day_Click(2019,2,3);" onmouseover="this.className=&#39;WwdayOn&#39;" onmouseout="this.className=&#39;Wwday&#39;" class="Wwday">3</td><td onclick="day_Click(2019,2,4);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">4</td><td onclick="day_Click(2019,2,5);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">5</td><td onclick="day_Click(2019,2,6);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">6</td><td onclick="day_Click(2019,2,7);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">7</td><td onclick="day_Click(2019,2,8);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">8</td><td onclick="day_Click(2019,2,9);" onmouseover="this.className=&#39;WwdayOn&#39;" onmouseout="this.className=&#39;Wwday&#39;" class="Wwday">9</td></tr><tr><td onclick="day_Click(2019,2,10);" onmouseover="this.className=&#39;WwdayOn&#39;" onmouseout="this.className=&#39;Wwday&#39;" class="Wwday">10</td><td onclick="day_Click(2019,2,11);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">11</td><td onclick="day_Click(2019,2,12);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">12</td><td onclick="day_Click(2019,2,13);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">13</td><td onclick="day_Click(2019,2,14);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">14</td><td onclick="day_Click(2019,2,15);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">15</td><td onclick="day_Click(2019,2,16);" onmouseover="this.className=&#39;WwdayOn&#39;" onmouseout="this.className=&#39;Wwday&#39;" class="Wwday">16</td></tr><tr><td onclick="day_Click(2019,2,17);" onmouseover="this.className=&#39;WwdayOn&#39;" onmouseout="this.className=&#39;Wwday&#39;" class="Wwday">17</td><td onclick="day_Click(2019,2,18);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">18</td><td onclick="day_Click(2019,2,19);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">19</td><td onclick="day_Click(2019,2,20);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">20</td><td onclick="day_Click(2019,2,21);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">21</td><td onclick="day_Click(2019,2,22);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">22</td><td onclick="day_Click(2019,2,23);" onmouseover="this.className=&#39;WwdayOn&#39;" onmouseout="this.className=&#39;Wwday&#39;" class="Wwday">23</td></tr><tr><td onclick="day_Click(2019,2,24);" onmouseover="this.className=&#39;WwdayOn&#39;" onmouseout="this.className=&#39;Wwday&#39;" class="Wwday">24</td><td onclick="day_Click(2019,2,25);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">25</td><td onclick="day_Click(2019,2,26);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">26</td><td onclick="day_Click(2019,2,27);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">27</td><td onclick="day_Click(2019,2,28);" onmouseover="this.className=&#39;WdayOn&#39;" onmouseout="this.className=&#39;Wday&#39;" class="Wday">28</td><td onclick="day_Click(2019,3,1);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">1</td><td onclick="day_Click(2019,3,2);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">2</td></tr><tr><td onclick="day_Click(2019,3,3);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">3</td><td onclick="day_Click(2019,3,4);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">4</td><td onclick="day_Click(2019,3,5);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">5</td><td onclick="day_Click(2019,3,6);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">6</td><td onclick="day_Click(2019,3,7);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">7</td><td onclick="day_Click(2019,3,8);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">8</td><td onclick="day_Click(2019,3,9);" onmouseover="this.className=&#39;WotherDayOn&#39;" onmouseout="this.className=&#39;WotherDay&#39;" class="WotherDay">9</td></tr></tbody></table></div><div id="dpTime" style="display: none;"><div class="menuSel hhMenu" style="display: none;"></div><div class="menuSel mmMenu" style="display: none;"></div><div class="menuSel ssMenu" style="display: none;"></div><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td rowspan="2"><span id="dpTimeStr">Time</span>&nbsp;<input class="tB" maxlength="2"><input value=":" class="tm" readonly=""><input class="tE" maxlength="2"><input value=":" class="tm" readonly=""><input class="tE" maxlength="2"></td><td><button id="dpTimeUp"></button></td></tr><tr><td><button id="dpTimeDown"></button></td></tr></tbody></table></div><div id="dpQS"></div><div id="dpControl"><input class="dpButton" id="dpClearInput" type="button" value="Clear"><input class="dpButton" id="dpTodayInput" type="button" value="Today"><input class="dpButton" id="dpOkInput" type="button" value="OK"></div></div>
+
+</body></html>
